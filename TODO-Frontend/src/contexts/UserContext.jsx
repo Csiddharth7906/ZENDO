@@ -32,8 +32,8 @@ export const UserProvider = ({ children }) => {
         
         // Fetch user data and stats
         const [userRes, statsRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/auth/me'),
-          axios.get('http://localhost:5000/api/user/me')
+          axios.get('https://zendo-1.onrender.com/api/auth/me'),
+          axios.get('https://zendo-1.onrender.com/api/user/me')
         ]);
 
         setUser(userRes.data.data);
@@ -55,7 +55,7 @@ export const UserProvider = ({ children }) => {
   const register = async (userData) => {
     try {
       setError(null);
-      const response = await axios.post('http://localhost:5000/api/auth/register', userData);
+      const response = await axios.post('https://zendo-1.onrender.com/api/auth/register', userData);
       const { token, data } = response.data;
       
       // Store token in localStorage
@@ -77,7 +77,7 @@ export const UserProvider = ({ children }) => {
   const login = async (credentials) => {
     try {
       setError(null);
-      const response = await axios.post('http://localhost:5000/api/auth/login', credentials);
+      const response = await axios.post('https://zendo-1.onrender.com/api/auth/login', credentials);
       const { token, data } = response.data;
       
       // Store token in localStorage
@@ -89,7 +89,7 @@ export const UserProvider = ({ children }) => {
       setUser(data.user);
       
       // Fetch user stats after login
-      const statsRes = await axios.get('http://localhost:5000/api/user/me');
+      const statsRes = await axios.get('https://zendo-1.onrender.com/api/user/me');
       if (statsRes.data.data) {
         setStats(statsRes.data.data);
       }

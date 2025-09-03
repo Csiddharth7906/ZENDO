@@ -49,7 +49,7 @@ export default function Login() {
           {/* Google Login Button */}
           <div className="mb-6">
             <a
-              href="http://localhost:5000/api/auth/google"
+              href="https://zendo-1.onrender.com/api/auth/google"
               className="w-full flex items-center justify-center px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm bg-white text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 font-medium"
             >
               <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24">
