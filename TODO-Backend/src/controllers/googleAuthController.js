@@ -17,8 +17,8 @@ const sendTokenResponse = (user, statusCode, res) => {
   const cookieOptions = {
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
     httpOnly: true,
-    secure: false, // Set to false for development (localhost)
-    sameSite: 'lax',
+    secure: isProduction, // Set to true in production (HTTPS)
+    sameSite: isProduction ? 'none' : 'lax', // 'none' for cross-site cookies in production
     path: '/'
   };
 
