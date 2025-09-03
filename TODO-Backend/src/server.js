@@ -80,6 +80,9 @@ app.use(session({
   }
 }));
 
+// Load Passport config
+require('./config/passport');
+
 // Initialize Passport
 app.use(passport.initialize());
 app.use(passport.session());
