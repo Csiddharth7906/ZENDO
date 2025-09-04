@@ -18,10 +18,9 @@ const sendTokenResponse = (user, statusCode, res) => {
   const cookieOptions = {
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
     httpOnly: true,
-    secure: false, // Set to false for development (localhost)
-    sameSite: 'lax',
+    secure: isProduction, // true in production for HTTPS
+    sameSite: isProduction ? 'none' : 'lax', // 'none' for cross-origin in production
     path: '/'
-    // Remove domain for localhost - let browser handle it
   };
 
   // For development, log cookie info
@@ -138,9 +137,14 @@ exports.login = async (req, res) => {
 // @route   POST /api/auth/logout
 // @access  Public
 exports.logout = async (req, res) => {
+  const isProduction = process.env.NODE_ENV === 'production';
+  
   res.cookie('token', 'none', {
     expires: new Date(Date.now() + 10 * 1000),
-    httpOnly: true
+    httpOnly: true,
+    secure: isProduction,
+    sameSite: isProduction ? 'none' : 'lax',
+    path: '/'
   });
 
   res.status(200).json({
