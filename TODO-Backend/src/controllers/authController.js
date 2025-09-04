@@ -19,7 +19,7 @@ const sendTokenResponse = (user, statusCode, res) => {
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
     httpOnly: true,
     secure: isProduction, // true in production for HTTPS
-    sameSite: isProduction ? 'none' : 'lax', // 'none' for cross-origin in production
+    sameSite: isProduction ? 'None' : 'lax', // 'None' for cross-origin in production (case sensitive!)
     path: '/'
   };
 
@@ -143,7 +143,7 @@ exports.logout = async (req, res) => {
     expires: new Date(Date.now() + 10 * 1000),
     httpOnly: true,
     secure: isProduction,
-    sameSite: isProduction ? 'none' : 'lax',
+    sameSite: isProduction ? 'None' : 'lax', // 'None' is case sensitive!
     path: '/'
   });
 
