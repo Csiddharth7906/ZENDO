@@ -38,16 +38,14 @@ export default function LandingPage() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <div className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 cursor-pointer">
-                <span className="text-sm font-medium">Made For</span>
-                <ChevronDownIcon className="w-4 h-4" />
-              </div>
-              <div className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 cursor-pointer">
-                <span className="text-sm font-medium">Resources</span>
-                <ChevronDownIcon className="w-4 h-4" />
-              </div>
-              <Link to="/pricing" className="text-sm font-medium text-gray-700 hover:text-gray-900">
-                Pricing
+              <Link to="/about" className="text-sm font-medium text-gray-700 hover:text-gray-900">
+                About
+              </Link>
+              <Link to="/features" className="text-sm font-medium text-gray-700 hover:text-gray-900">
+                Features
+              </Link>
+              <Link to="/contact" className="text-sm font-medium text-gray-700 hover:text-gray-900">
+                Contact
               </Link>
               <Link to="/login" className="text-sm font-medium text-gray-700 hover:text-gray-900">
                 Log in
@@ -79,10 +77,14 @@ export default function LandingPage() {
           {mobileMenuOpen && (
             <div className="md:hidden border-t border-gray-100 py-4">
               <div className="space-y-4">
-                <div className="text-gray-700 font-medium">Made For</div>
-                <div className="text-gray-700 font-medium">Resources</div>
-                <Link to="/pricing" className="block text-gray-700 font-medium">
-                  Pricing
+                <Link to="/about" className="block text-gray-700 font-medium">
+                  About
+                </Link>
+                <Link to="/features" className="block text-gray-700 font-medium">
+                  Features
+                </Link>
+                <Link to="/contact" className="block text-gray-700 font-medium">
+                  Contact
                 </Link>
                 <Link to="/login" className="block text-gray-700 font-medium">
                   Log in
@@ -110,7 +112,7 @@ export default function LandingPage() {
                   Clarity, finally.
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-                  Join 50+ million professionals who simplify work and life with the world's #1 to-do list app.
+                  Organize your tasks, boost productivity, and achieve your goals with our intuitive to-do list app.
                 </p>
               </div>
 
@@ -121,7 +123,7 @@ export default function LandingPage() {
                     <StarIcon key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="text-sm text-gray-600">314K+ ★★★★★ reviews</span>
+                <span className="text-gray-600 text-sm">Start organizing your tasks today</span>
               </div>
 
               {/* CTA Button */}
@@ -215,58 +217,51 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Features Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Zendo?</h2>
+            <p className="text-lg text-gray-600">Everything you need to stay organized and productive</p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
+            {/* Feature 1 */}
             <div className="text-center">
               <div className="mb-4">
-                <div className="flex justify-center mb-2">
-                  <StarIcon className="w-6 h-6 text-yellow-400 fill-current" />
-                </div>
-                <blockquote className="text-lg italic text-gray-700 mb-4">
-                  "Simple, straightforward, and super powerful"
-                </blockquote>
-                <div className="flex justify-center">
-                  <div className="bg-gray-300 rounded-full px-4 py-1">
-                    <span className="text-sm font-medium text-gray-700">THE VERGE</span>
+                <div className="flex justify-center mb-4">
+                  <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center">
+                    <CheckIcon className="w-6 h-6 text-white" />
                   </div>
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Simple & Intuitive</h3>
+                <p className="text-gray-600">Clean interface that helps you focus on what matters most</p>
               </div>
             </div>
 
-            {/* Testimonial 2 */}
+            {/* Feature 2 */}
             <div className="text-center">
               <div className="mb-4">
-                <div className="flex justify-center mb-2">
-                  <StarIcon className="w-6 h-6 text-yellow-400 fill-current" />
-                </div>
-                <blockquote className="text-lg italic text-gray-700 mb-4">
-                  "The best to-do list app on the market"
-                </blockquote>
-                <div className="flex justify-center">
-                  <div className="bg-gray-300 rounded-full px-4 py-1">
-                    <span className="text-sm font-medium text-gray-700">PC MAG</span>
+                <div className="flex justify-center mb-4">
+                  <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <StarIcon className="w-6 h-6 text-white" />
                   </div>
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Smart Organization</h3>
+                <p className="text-gray-600">Organize tasks with projects, priorities, and due dates</p>
               </div>
             </div>
 
-            {/* Testimonial 3 */}
+            {/* Feature 3 */}
             <div className="text-center">
               <div className="mb-4">
-                <div className="flex justify-center mb-2">
-                  <StarIcon className="w-6 h-6 text-yellow-400 fill-current" />
-                </div>
-                <blockquote className="text-lg italic text-gray-700 mb-4">
-                  "Nothing short of stellar"
-                </blockquote>
-                <div className="flex justify-center">
-                  <div className="bg-gray-300 rounded-full px-4 py-1">
-                    <span className="text-sm font-medium text-gray-700">TECHRADAR</span>
+                <div className="flex justify-center mb-4">
+                  <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                    <PlayIcon className="w-6 h-6 text-white" />
                   </div>
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Always Synced</h3>
+                <p className="text-gray-600">Access your tasks anywhere, anytime, on any device</p>
               </div>
             </div>
           </div>

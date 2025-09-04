@@ -7,6 +7,9 @@ import ZendoDashboard from './pages/ZendoDashboard';
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import About from './pages/About';
+import Features from './pages/Features';
+import Contact from './pages/Contact';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -34,6 +37,9 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/features" element={<Features />} />
+              <Route path="/contact" element={<Contact />} />
               
               {/* Protected routes */}
               <Route path="/dashboard" element={<PrivateRoute />}>
