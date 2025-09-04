@@ -19,6 +19,8 @@ api.defaults.withCredentials = true;
 api.interceptors.request.use(
   (config) => {
     console.log('Making request to:', config.method?.toUpperCase(), config.url);
+    console.log('Request headers:', config.headers);
+    console.log('WithCredentials:', config.withCredentials);
     return config;
   },
   (error) => {
@@ -30,11 +32,14 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     console.log('Response received:', response.status, response.config.url);
+    console.log('Response headers:', response.headers);
+    console.log('Response data:', response.data);
     return response;
   },
   (error) => {
     if (error.response) {
       console.error('API Error:', error.response.status, error.response.data);
+      console.error('Error response headers:', error.response.headers);
       
       // Handle specific status codes
       if (error.response.status === 401) {
